@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+    ></script>
+    <title>Orçamento Pessoal</title>
+  </head>
+  <body onload="carregarDespesa()">
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logo.png"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-top"
+          />
+          Orçamento Pessoal
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Cadastro</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="consulta.html">Consulta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container position-relative">
+      <div class="row text-center">
+        <div class="col mt-4">
+          <h1 class="text-capitalize">Consultar Despesa</h1>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <select class="custom-select" name="" id="ano">
+            <option value="">Ano</option>
+            <option value="2021">2021</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="custom-select" name="" id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="">Fevereiro</option>
+            <option value="2021">Março</option>
+            <option value="2021">Abril</option>
+            <option value="2021">Maio</option>
+            <option value="2021">Junho</option>
+            <option value="2021">Julho</option>
+            <option value="2021">Agosto</option>
+            <option value="2021">Setembro</option>
+            <option value="2021">Outubro</option>
+            <option value="2021">Novembro</option>
+            <option value="2021">Dezembro</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <input
+            class="form-control"
+            type="number"
+            placeholder="Dia"
+            id="dia"
+            min="1"
+            max="31"
+          />
+        </div>
+        <div class="col-6">
+          <select class="custom-select" name="" id="tipo">
+            <option value="">Tipo</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Educação">Educação</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Cartão">Cartão Crédito</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <input
+            class="form-control"
+            type="text"
+            id="descricao"
+            placeholder="Descrição"
+          />
+        </div>
+        <div class="col-6">
+          <input
+            class="form-control"
+            type="number"
+            id="valor"
+            placeholder="Valor"
+          />
+        </div>
+        <div class="col-6">
+          <button
+            id="btn_pesquisa"
+            onclick="pesquisarDespesa()"
+            class="btn btn-primary"
+          >
+            <i class="fas fa-search-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section>
+      <table
+        class="table table-hover table-striped mt-4"
+        style="max-width: 1120px; margin: auto"
+      >
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Valor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="listarDespesa alig"></tbody>
+      </table>
+    </section>
+    <!-- <button class="btn btn-primary" type="button" disabled>
+      <span
+        class="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      <span class="visually-hidden">Loading...</span>
+    </button> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/interface.js"></script>
+  </body>
+</html>
